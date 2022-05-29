@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-// TODO #4: security config
 @EnableWebSecurity(debug = true)
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
