@@ -12,3 +12,5 @@ CREATE TABLE IF NOT EXISTS `Authoroties` (
 
     PRIMARY KEY(`member_id`)
 );
+
+INSERT INTO `Members` VALUES ('1', 'corock', '123!');

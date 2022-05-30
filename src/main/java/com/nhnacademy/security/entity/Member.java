@@ -15,13 +15,13 @@ public class Member {
 
     @Id
     @Column(name = "member_id")
-    private String username;
+    private String id;
 
     @Column
     private String name;
 
     @Column(name = "pwd")
-    private String password;
+    private String pwd;
 
     @OneToOne
     Authorities authorities;

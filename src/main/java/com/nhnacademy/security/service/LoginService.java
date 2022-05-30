@@ -13,8 +13,8 @@ public class LoginService {
         this.loginRepository = loginRepository;
     }
 
-    public Member login(String username, String password) {
-        return loginRepository.findMemberByUsernameAndPassword(username, password);
+    public Member login(String id, String pwd) {
+        return loginRepository.findMemberByIdAndPwd(id, pwd);
     }
 
 }

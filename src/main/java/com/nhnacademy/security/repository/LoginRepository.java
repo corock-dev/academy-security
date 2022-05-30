@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LoginRepository extends JpaRepository<Member, String> {
 
-    Member findMemberByUsernameAndPassword(String username, String password);
+    Member findMemberByIdAndPwd(String id, String pwd);
 
 }
