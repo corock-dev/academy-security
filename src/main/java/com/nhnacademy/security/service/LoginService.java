@@ -14,6 +14,7 @@ public class LoginService {
     }
 
     public Member login(String username, String password) {
-        return null;
+        return loginRepository.findMemberByUsernameAndPassword(username, password);
     }
+
 }
