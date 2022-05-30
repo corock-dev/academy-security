@@ -24,6 +24,7 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- JPA 관련 -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-bom</artifactId>
@@ -166,6 +167,7 @@
                 <version>2.22.2</version>
             </plugin>
 
+            <!-- configuration: 자동으로 Q 타입 만들 수 있게끔 -->
             <plugin>
                 <groupId>com.mysema.maven</groupId>
                 <artifactId>apt-maven-plugin</artifactId>

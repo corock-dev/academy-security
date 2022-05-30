@@ -20,6 +20,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @Configuration
 @ComponentScan(basePackageClasses = ControllerBase.class)
 public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, MessageSourceAware {
+
     private ApplicationContext applicationContext;
     private MessageSource messageSource;
 
@@ -44,7 +45,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
         viewResolver.setOrder(1);
-        viewResolver.setViewNames(new String[] { "*" });
+        viewResolver.setViewNames(new String[]{ "*" });
 
         return viewResolver;
     }
