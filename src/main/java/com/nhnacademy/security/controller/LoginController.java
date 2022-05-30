@@ -29,7 +29,6 @@ public class LoginController {
 
     @PostMapping("/login")
     public String doLogin(@ModelAttribute LoginRequest loginRequest, BindingResult bindingResult,
-                          @RequestParam(defaultValue = "/") String redirectUrl,
                           HttpServletRequest request) {
 
         if (bindingResult.hasErrors()) {
