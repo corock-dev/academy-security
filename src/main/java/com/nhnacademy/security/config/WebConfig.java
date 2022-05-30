@@ -1,6 +1,7 @@
 package com.nhnacademy.security.config;
 
 import com.nhnacademy.security.controller.ControllerBase;
+import com.nhnacademy.security.interceptor.LoginCheckInterceptor;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -62,11 +64,19 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setCharacterEncoding("UTF-8");
-        templateResolver.setPrefix("/WEB-INF/view/");
+        templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
 
         return templateResolver;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginCheckInterceptor())
+                .order(1)
+                .addPathPatterns("**")
+                .excludePathPatterns("/login", "/logout");
     }
 
 }

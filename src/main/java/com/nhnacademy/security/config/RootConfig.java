@@ -20,7 +20,7 @@ public class RootConfig {
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:~/security;DATABASE_TO_UPPER=false;MODE=LEGACY;"
+        dataSource.setUrl("jdbc:h2:~/h2/security;DATABASE_TO_UPPER=false;MODE=LEGACY;"
                                   + "INIT=RUNSCRIPT FROM 'classpath:/script/schema.sql'");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
